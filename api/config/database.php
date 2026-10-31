@@ -9,12 +9,12 @@ class Database {
     public function getConnection() {
         $this->conn = null;
         
-        // Dynamic fallback: Use remote credentials if running on cloud server, else use local Termux MariaDB
+        // Dynamic fallback: Use remote credentials on InfinityFree, else use local Termux
         if (isset($_SERVER['HTTP_HOST']) && strstr($_SERVER['HTTP_HOST'], 'infinityfreeapp.com')) {
             $this->host = 'sql202.infinityfree.com';
             $this->db_name = 'if0_43321284_barangay_db';
             $this->username = 'if0_43321284';
-            $this->password = 'YOUR_INFINITYFREE_PASSWORD'; // Replace with your actual password
+            $this->password = 'Wywqgqp3dNzKB'; // Replace with your actual hosting password
         } else {
             $this->host = 'localhost';
             $this->db_name = 'barangay_db';
